@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Text to Speech</title>
+	<style type="text/css">
+		*,
+		*::after,
+		*::before {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		button {
+			padding: 10px 20px;
+			border: 1px solid;
+			cursor: pointer;
+		}
+		textarea {
+			padding: 10px 5px;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="textToSpeak" cols="60" rows="3">Hello Imran! How are you? I can speak! hahaha.</textarea>
+	<br>
+	<button id="speakButton">Speak!</button>
+	<script type="text/javascript">
+		// https://medium.com/stackademic/read-text-aloud-in-simple-javascript-9528a8457904
+		// https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+		if ('speechSynthesis' in window) {
+			const synthesis = window.speechSynthesis;
+			const speakButton = document.querySelector('#speakButton');
+			const textToSpeak = document.querySelector('#textToSpeak');
+			const utterance = new SpeechSynthesisUtterance();
+			utterance.lang = 'en-US'; // Set the language
+			utterance.volume = 1;     // Set the volume (0 to 1)
+			utterance.rate = 1;       // Set the rate (0.1 to 10)
+			utterance.pitch = 1;      // Set the pitch (0 to 2)
+			speakButton.addEventListener('click', event => {
+				utterance.text = textToSpeak.value;
+				synthesis.speak(utterance);
+			});
+		} else {
+			console.warn('Web Speech API is not supported in this browser.');
+		}
+	</script>
+</body>
+</html>
