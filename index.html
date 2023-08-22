@@ -20,22 +20,31 @@
 			height: 100vh;
 		}
 		button {
-			padding: 10px 20px;
-			border: 1px solid;
 			cursor: pointer;
+			border: 1px solid #ddd;
+			padding: 10px 20px;
+			border-radius: 10px;
+			background: #aaa;
+		}
+		button:hover {
+			border: 1px solid #666;
+			background: #999;
+			color: #333;
 		}
 		textarea {
+			width: 90vw;
+			height: 80px;
 			padding: 10px 5px;
+			border-radius: 10px;
+			border: 1px solid gray;
 		}
 	</style>
 </head>
 <body>
-	<textarea id="textToSpeak" cols="60" rows="3">Hello Imran! How are you? I can speak! hahaha.</textarea>
+	<textarea id="textToSpeak">Hello Imran! How are you? I can speak! hahaha.</textarea>
 	<br>
 	<button id="speakButton">Speak!</button>
 	<script type="text/javascript">
-		// https://medium.com/stackademic/read-text-aloud-in-simple-javascript-9528a8457904
-		// https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 		if ('speechSynthesis' in window) {
 			const synthesis = window.speechSynthesis;
 			const speakButton = document.querySelector('#speakButton');
