@@ -1,50 +1,51 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, zoom=false">
-	<link rel="icon" type="image/x-icon" href="favicon.png">
-	<title>Text to Speech</title>
-	<style type="text/css">
-		*,
-		*::after,
-		*::before {
-			box-sizing: border-box;
-			padding: 0;
-			margin: 0;
-		}
-		body {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-		}
-		button {
-			cursor: pointer;
-			border: 1px solid #ddd;
-			padding: 10px 20px;
-			border-radius: 10px;
-			background: #aaa;
-		}
-		button:hover {
-			border: 1px solid #666;
-			background: #999;
-			color: #333;
-		}
-		textarea {
-			width: 90vw;
-			overflow: auto;
-			min-height: 60vh;
-			max-height: 90vh;
-			padding: 10px 5px;
-			border-radius: 10px;
-			border: 1px solid gray;
-		}
-	</style>
-</head>
-<body>
-<textarea spellcheck="false" id="textToSpeak">The Life of Muhammad (Peace Be Upon Him): An Autobiography
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, zoom=false" />
+    <title>Text to Speech</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <style type="text/css">
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      button {
+        cursor: pointer;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #aaa;
+      }
+      button:hover {
+        border: 1px solid #666;
+        background: #999;
+        color: #333;
+      }
+      textarea {
+        width: 90vw;
+        overflow: auto;
+        min-height: 60vh;
+        max-height: 90vh;
+        padding: 10px 5px;
+        border-radius: 10px;
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea spellcheck="false" id="textToSpeak">
+The Life of Muhammad (Peace Be Upon Him): An Autobiography
 
 Introduction:
 I am Muhammad, born in the city of Mecca in the year 570 AD, a time when the Arabian Peninsula was steeped in ignorance and idolatry. My father, Abdullah, passed away before my birth, leaving me under the care of my mother, Amina, and my grandfather, Abdul-Muttalib.
@@ -71,26 +72,27 @@ Legacy:
 Throughout my life, I exemplified the teachings of Islam through my actions, words, and deeds. I served as a role model for humanity, embodying virtues such as humility, kindness, and forgiveness. My legacy continues to inspire millions of people around the world, transcending time, culture, and geography.
 
 Conclusion:
-As I reflect on my life's journey, I am humbled by the opportunity to have been chosen as a messenger of God. I pray that my example serves as a guiding light for future generations, leading them towards the path of righteousness and piety. Peace be upon you all.</textarea>
-	<br>
-	<button id="speakButton">Speak!</button>
-	<script type="text/javascript">
-		if ('speechSynthesis' in window) {
-			const synthesis = window.speechSynthesis;
-			const speakButton = document.querySelector('#speakButton');
-			const textToSpeak = document.querySelector('#textToSpeak');
-			const utterance = new SpeechSynthesisUtterance();
-			utterance.lang = 'en-US'; // Set the language
-			utterance.volume = 1;     // Set the volume (0 to 1)
-			utterance.rate = 1;       // Set the rate (0.1 to 10)
-			utterance.pitch = 1;      // Set the pitch (0 to 2)
-			speakButton.addEventListener('click', event => {
-				utterance.text = textToSpeak.value;
-				synthesis.speak(utterance);
-			});
-		} else {
-			console.warn('Web Speech API is not supported in this browser.');
-		}
-	</script>
-</body>
+As I reflect on my life's journey, I am humbled by the opportunity to have been chosen as a messenger of God. I pray that my example serves as a guiding light for future generations, leading them towards the path of righteousness and piety. Peace be upon you all.</textarea
+    >
+    <br />
+    <button id="speakButton">Speak!</button>
+    <script type="text/javascript">
+      if ("speechSynthesis" in window) {
+        const synthesis = window.speechSynthesis;
+        const speakButton = document.querySelector("#speakButton");
+        const textToSpeak = document.querySelector("#textToSpeak");
+        const utterance = new SpeechSynthesisUtterance();
+        utterance.lang = "en-US"; // Set the language
+        utterance.volume = 1; // Set the volume (0 to 1)
+        utterance.rate = 1; // Set the rate (0.1 to 10)
+        utterance.pitch = 1; // Set the pitch (0 to 2)
+        speakButton.addEventListener("click", (event) => {
+          utterance.text = textToSpeak.value;
+          synthesis.speak(utterance);
+        });
+      } else {
+        console.warn("Web Speech API is not supported in this browser.");
+      }
+    </script>
+  </body>
 </html>
