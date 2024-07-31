@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+button {
+  cursor: pointer;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #aaa;
+}
+button:hover {
+  border: 1px solid #666;
+  background: #999;
+  color: #333;
+}
+textarea {
+  width: 90vw;
+  overflow: auto;
+  min-height: 60vh;
+  max-height: 90vh;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
