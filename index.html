@@ -2,13 +2,145 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, zoom=false">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>Text to Speech</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <textarea spellcheck="false" id="textToSpeak">
+    <div class="controls">
+      <select id="lang" name="lang">
+          <option value="af-ZA">af-ZA (Afrikaans - South Africa)</option>
+          <option value="am-ET">am-ET (Amharic - Ethiopia)</option>
+          <option value="ar-AE">ar-AE (Arabic - United Arab Emirates)</option>
+          <option value="ar-BH">ar-BH (Arabic - Bahrain)</option>
+          <option value="ar-DZ">ar-DZ (Arabic - Algeria)</option>
+          <option value="ar-EG">ar-EG (Arabic - Egypt)</option>
+          <option value="ar-IQ">ar-IQ (Arabic - Iraq)</option>
+          <option value="ar-JO">ar-JO (Arabic - Jordan)</option>
+          <option value="ar-KW">ar-KW (Arabic - Kuwait)</option>
+          <option value="ar-LB">ar-LB (Arabic - Lebanon)</option>
+          <option value="ar-LY">ar-LY (Arabic - Libya)</option>
+          <option value="ar-MA">ar-MA (Arabic - Morocco)</option>
+          <option value="ar-OM">ar-OM (Arabic - Oman)</option>
+          <option value="ar-QA">ar-QA (Arabic - Qatar)</option>
+          <option value="ar-SA">ar-SA (Arabic - Saudi Arabia)</option>
+          <option value="ar-SD">ar-SD (Arabic - Sudan)</option>
+          <option value="ar-SY">ar-SY (Arabic - Syria)</option>
+          <option value="ar-TN">ar-TN (Arabic - Tunisia)</option>
+          <option value="ar-YE">ar-YE (Arabic - Yemen)</option>
+          <option value="as-IN">as-IN (Assamese - India)</option>
+          <option value="az-AZ">az-AZ (Azerbaijani - Azerbaijan)</option>
+          <option value="be-BY">be-BY (Belarusian - Belarus)</option>
+          <option value="bg-BG">bg-BG (Bulgarian - Bulgaria)</option>
+          <option value="bn-BD">bn-BD (Bengali - Bangladesh)</option>
+          <option value="bn-IN">bn-IN (Bengali - India)</option>
+          <option value="bs-BA">bs-BA (Bosnian - Bosnia and Herzegovina)</option>
+          <option value="ca-ES">ca-ES (Catalan - Spain)</option>
+          <option value="cs-CZ">cs-CZ (Czech - Czech Republic)</option>
+          <option value="cy-GB">cy-GB (Welsh - United Kingdom)</option>
+          <option value="da-DK">da-DK (Danish - Denmark)</option>
+          <option value="de-AT">de-AT (German - Austria)</option>
+          <option value="de-CH">de-CH (German - Switzerland)</option>
+          <option value="de-DE">de-DE (German - Germany)</option>
+          <option value="el-GR">el-GR (Greek - Greece)</option>
+          <option value="en-AU">en-AU (English - Australia)</option>
+          <option value="en-CA">en-CA (English - Canada)</option>
+          <option value="en-GB">en-GB (English - United Kingdom)</option>
+          <option value="en-IE">en-IE (English - Ireland)</option>
+          <option value="en-IN">en-IN (English - India)</option>
+          <option value="en-NZ">en-NZ (English - New Zealand)</option>
+          <option value="en-US" selected>en-US (English - United States)</option>
+          <option value="en-ZA">en-ZA (English - South Africa)</option>
+          <option value="es-AR">es-AR (Spanish - Argentina)</option>
+          <option value="es-BO">es-BO (Spanish - Bolivia)</option>
+          <option value="es-CL">es-CL (Spanish - Chile)</option>
+          <option value="es-CO">es-CO (Spanish - Colombia)</option>
+          <option value="es-CR">es-CR (Spanish - Costa Rica)</option>
+          <option value="es-DO">es-DO (Spanish - Dominican Republic)</option>
+          <option value="es-EC">es-EC (Spanish - Ecuador)</option>
+          <option value="es-ES">es-ES (Spanish - Spain)</option>
+          <option value="es-GT">es-GT (Spanish - Guatemala)</option>
+          <option value="es-HN">es-HN (Spanish - Honduras)</option>
+          <option value="es-MX">es-MX (Spanish - Mexico)</option>
+          <option value="es-NI">es-NI (Spanish - Nicaragua)</option>
+          <option value="es-PA">es-PA (Spanish - Panama)</option>
+          <option value="es-PE">es-PE (Spanish - Peru)</option>
+          <option value="es-PR">es-PR (Spanish - Puerto Rico)</option>
+          <option value="es-PY">es-PY (Spanish - Paraguay)</option>
+          <option value="es-SV">es-SV (Spanish - El Salvador)</option>
+          <option value="es-US">es-US (Spanish - United States)</option>
+          <option value="es-UY">es-UY (Spanish - Uruguay)</option>
+          <option value="es-VE">es-VE (Spanish - Venezuela)</option>
+          <option value="et-EE">et-EE (Estonian - Estonia)</option>
+          <option value="eu-ES">eu-ES (Basque - Spain)</option>
+          <option value="fa-IR">fa-IR (Persian - Iran)</option>
+          <option value="fi-FI">fi-FI (Finnish - Finland)</option>
+          <option value="fil-PH">fil-PH (Filipino - Philippines)</option>
+          <option value="fr-BE">fr-BE (French - Belgium)</option>
+          <option value="fr-CA">fr-CA (French - Canada)</option>
+          <option value="fr-CH">fr-CH (French - Switzerland)</option>
+          <option value="fr-FR">fr-FR (French - France)</option>
+          <option value="ga-IE">ga-IE (Irish - Ireland)</option>
+          <option value="gl-ES">gl-ES (Galician - Spain)</option>
+          <option value="gu-IN">gu-IN (Gujarati - India)</option>
+          <option value="he-IL">he-IL (Hebrew - Israel)</option>
+          <option value="hi-IN">hi-IN (Hindi - India)</option>
+          <option value="hr-HR">hr-HR (Croatian - Croatia)</option>
+          <option value="hu-HU">hu-HU (Hungarian - Hungary)</option>
+          <option value="hy-AM">hy-AM (Armenian - Armenia)</option>
+          <option value="id-ID">id-ID (Indonesian - Indonesia)</option>
+          <option value="is-IS">is-IS (Icelandic - Iceland)</option>
+          <option value="it-IT">it-IT (Italian - Italy)</option>
+          <option value="ja-JP">ja-JP (Japanese - Japan)</option>
+          <option value="ka-GE">ka-GE (Georgian - Georgia)</option>
+          <option value="kk-KZ">kk-KZ (Kazakh - Kazakhstan)</option>
+          <option value="km-KH">km-KH (Khmer - Cambodia)</option>
+          <option value="kn-IN">kn-IN (Kannada - India)</option>
+          <option value="ko-KR">ko-KR (Korean - South Korea)</option>
+          <option value="lo-LA">lo-LA (Lao - Laos)</option>
+          <option value="lt-LT">lt-LT (Lithuanian - Lithuania)</option>
+          <option value="lv-LV">lv-LV (Latvian - Latvia)</option>
+          <option value="mk-MK">mk-MK (Macedonian - North Macedonia)</option>
+          <option value="ml-IN">ml-IN (Malayalam - India)</option>
+          <option value="mn-MN">mn-MN (Mongolian - Mongolia)</option>
+          <option value="mr-IN">mr-IN (Marathi - India)</option>
+          <option value="ms-MY">ms-MY (Malay - Malaysia)</option>
+          <option value="my-MM">my-MM (Burmese - Myanmar)</option>
+          <option value="ne-NP">ne-NP (Nepali - Nepal)</option>
+          <option value="nl-BE">nl-BE (Dutch - Belgium)</option>
+          <option value="nl-NL">nl-NL (Dutch - Netherlands)</option>
+          <option value="no-NO">no-NO (Norwegian - Norway)</option>
+          <option value="pa-IN">pa-IN (Punjabi - India)</option>
+          <option value="pl-PL">pl-PL (Polish - Poland)</option>
+          <option value="pt-BR">pt-BR (Portuguese - Brazil)</option>
+          <option value="pt-PT">pt-PT (Portuguese - Portugal)</option>
+          <option value="ro-RO">ro-RO (Romanian - Romania)</option>
+          <option value="ru-RU">ru-RU (Russian - Russia)</option>
+          <option value="si-LK">si-LK (Sinhala - Sri Lanka)</option>
+          <option value="sk-SK">sk-SK (Slovak - Slovakia)</option>
+          <option value="sl-SI">sl-SI (Slovenian - Slovenia)</option>
+          <option value="sq-AL">sq-AL (Albanian - Albania)</option>
+          <option value="sr-RS">sr-RS (Serbian - Serbia)</option>
+          <option value="sv-SE">sv-SE (Swedish - Sweden)</option>
+          <option value="sw-KE">sw-KE (Swahili - Kenya)</option>
+          <option value="ta-IN">ta-IN (Tamil - India)</option>
+          <option value="te-IN">te-IN (Telugu - India)</option>
+          <option value="th-TH">th-TH (Thai - Thailand)</option>
+          <option value="tr-TR">tr-TR (Turkish - Turkey)</option>
+          <option value="uk-UA">uk-UA (Ukrainian - Ukraine)</option>
+          <option value="ur-IN">ur-IN (Urdu - India)</option>
+          <option value="ur-PK">ur-PK (Urdu - Pakistan)</option>
+          <option value="uz-UZ">uz-UZ (Uzbek - Uzbekistan)</option>
+          <option value="vi-VN">vi-VN (Vietnamese - Vietnam)</option>
+          <option value="zh-CN">zh-CN (Chinese - China)</option>
+          <option value="zh-HK">zh-HK (Chinese - Hong Kong)</option>
+          <option value="zh-TW">zh-TW (Chinese - Taiwan)</option>
+          <option value="zu-ZA">zu-ZA (Zulu - South Africa)</option>
+      </select>
+      <button id="speak-btn">Speak!</button>
+    </div>
+    <textarea spellcheck="false" id="text-to-speak">
 The Life of Muhammad (Peace Be Upon Him): An Autobiography
 
 Introduction:
@@ -36,27 +168,7 @@ Legacy:
 Throughout my life, I exemplified the teachings of Islam through my actions, words, and deeds. I served as a role model for humanity, embodying virtues such as humility, kindness, and forgiveness. My legacy continues to inspire millions of people around the world, transcending time, culture, and geography.
 
 Conclusion:
-As I reflect on my life's journey, I am humbled by the opportunity to have been chosen as a messenger of God. I pray that my example serves as a guiding light for future generations, leading them towards the path of righteousness and piety. Peace be upon you all.</textarea
-    >
-    <br />
-    <button id="speakButton">Speak!</button>
-    <script type="text/javascript">
-      if ("speechSynthesis" in window) {
-        const synthesis = window.speechSynthesis;
-        const speakButton = document.querySelector("#speakButton");
-        const textToSpeak = document.querySelector("#textToSpeak");
-        const utterance = new SpeechSynthesisUtterance();
-        utterance.lang = "en-US"; // Set the language
-        utterance.volume = 1; // Set the volume (0 to 1)
-        utterance.rate = 1; // Set the rate (0.1 to 10)
-        utterance.pitch = 1; // Set the pitch (0 to 2)
-        speakButton.addEventListener("click", (event) => {
-          utterance.text = textToSpeak.value;
-          synthesis.speak(utterance);
-        });
-      } else {
-        console.warn("Web Speech API is not supported in this browser.");
-      }
-    </script>
+As I reflect on my life's journey, I am humbled by the opportunity to have been chosen as a messenger of God. I pray that my example serves as a guiding light for future generations, leading them towards the path of righteousness and piety. Peace be upon you all.</textarea>
+    <script src="script.js"></script>
   </body>
 </html>
