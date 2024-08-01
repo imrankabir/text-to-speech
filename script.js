@@ -2,7 +2,7 @@ const speakBtn = document.querySelector("#speak-btn");
 const textToSpeak = document.querySelector("#text-to-speak");
 const lang = document.querySelector("#lang");
 
-if ("speechSynthesis" in window) {
+if ('speechSynthesis' in window) {
     const synthesis = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance();
     // utterance.lang = "en-US"; // Set the language
@@ -15,12 +15,11 @@ if ("speechSynthesis" in window) {
         synthesis.speak(utterance);
     });
 } else {
-    console.warn("Web Speech API is not supported in this browser.");
+    console.warn('Web Speech API is not supported in this browser.');
 }
 
 textToSpeak.addEventListener('click', e => {
     if (textToSpeak.value != '') {
         textToSpeak.select();
-        // document.execCommand('copy');
     }
 });
