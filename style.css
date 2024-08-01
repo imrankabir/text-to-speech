@@ -23,8 +23,17 @@ body {
   align-items: center;
 }
 select {
-  padding: 5px 10px;
+  padding: 10px 5px;
   border-radius: 5px;
+}
+option {
+  position: relative;
+}
+option::before {
+  top: 2px;
+  left: 2px;
+  content: '1';
+  position: fixed;
 }
 button {
     margin: 5px;
