@@ -2,7 +2,7 @@ const speakBtn = document.querySelector("#speak-btn");
 const textToSpeak = document.querySelector("#text-to-speak");
 // const lang = document.querySelector("#lang");
 
-const app = 'text-to-speech';
+const app = 'Text To Speech';
 const VISITS_KEY = 'text-to-speech-visits';
 
 if ('speechSynthesis' in window) {
