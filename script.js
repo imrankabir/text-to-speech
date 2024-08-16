@@ -1,9 +1,9 @@
+const app = 'Text To Speech';
+const VISITS_KEY = 'text-to-speech-visits';
+
 const speakBtn = document.querySelector("#speak-btn");
 const textToSpeak = document.querySelector("#text-to-speak");
 // const lang = document.querySelector("#lang");
-
-const app = 'Text To Speech';
-const VISITS_KEY = 'text-to-speech-visits';
 
 if ('speechSynthesis' in window) {
     const synthesis = window.speechSynthesis;
@@ -62,6 +62,7 @@ async function trackVisitor() {
     let visits = JSON.parse(localStorage.getItem(VISITS_KEY)) || [];
     visits.push({ip, time, app});
     localStorage.setItem(VISITS_KEY, JSON.stringify(visits));
+    persistVisits();
 }
 
 async function persistVisits() {
@@ -82,4 +83,3 @@ async function persistVisits() {
 }
 
 trackVisitor();
-persistVisits();
