@@ -27,4 +27,4 @@ textToSpeak.addEventListener('click', e => {
     }
 });
 
-trackVisitor();
+// trackVisitor();
